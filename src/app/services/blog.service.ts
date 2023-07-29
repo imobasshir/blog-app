@@ -21,6 +21,10 @@ export class BlogService {
     return this.http.get(this.baseUrl);
   }
 
+  getLastBlogs(): Observable<any> {
+    return this.http.get(this.baseUrl);
+  }
+
   // get a blog
   getABlog(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);

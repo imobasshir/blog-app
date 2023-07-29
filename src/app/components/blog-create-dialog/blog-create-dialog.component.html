@@ -1,14 +1,16 @@
-<div mat-dialog-title><h2>Create a Blog</h2></div>
-<form>
+<div mat-dialog-title>
+    <h2>Create a Blog</h2>
+</div>
+<form [formGroup]="blogFormGroup" (ngSubmit)="onSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Blog Title</mat-label>
-                <input matInput type="text" name="title" placeholder="Ex. Some blog title">
+                <input matInput type="text" name="title" formControlName="title" placeholder="Ex. Some blog title">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Blog Topics</mat-label>
-                <mat-select name="topics">
+                <mat-select name="topics" formControlName="topics">
                     <mat-option *ngFor="let topic of topics" [value]="topic">
                         {{topic}}
                     </mat-option>
@@ -21,29 +23,29 @@
                 <mat-label>Content</mat-label>
                 <textarea matInput
                     placeholder="Ex. Angular is a commonly used framework used to make a single page application."
-                    name="content"></textarea>
+                    name="content" formControlName="content"></textarea>
             </mat-form-field>
         </div>
 
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Image</mat-label>
-                <input matInput type="text" name="image" placeholder="Ex. url of image">
+                <input matInput type="text" name="image" formControlName="image" placeholder="Ex. url of image">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Video</mat-label>
-                <input matInput type="text" name="video" placeholder="Ex. Mobasshir">
+                <input matInput type="text" name="video" formControlName="video" placeholder="Ex. Mobasshir">
             </mat-form-field>
         </div>
 
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Refrences</mat-label>
-                <input matInput type="text" name="refrences" placeholder="Ex. science.com">
+                <input matInput type="text" name="refrences" formControlName="refrences" placeholder="Ex. science.com">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Author Name</mat-label>
-                <input matInput type="text" name="author" placeholder="Ex. Mobasshir">
+                <input matInput type="text" name="author" formControlName="author" placeholder="Ex. Mobasshir">
             </mat-form-field>
         </div>
 
@@ -54,3 +56,5 @@
         <button mat-raised-button color="primary" type="submit">Submit</button>
     </div>
 </form>
+
+<p></p>
