@@ -4,9 +4,13 @@
   <span class="example-spacer"></span>
 
   <a routerLink="home"><button mat-flat-button color="primary" matTooltip="home">Home</button></a>
+
   <a routerLink="blog"><button mat-flat-button color="primary" matTooltip="blog">Blog</button></a>
-  <a routerLink="blog-create"><button mat-flat-button color="primary" matTooltip="create blog">Create</button></a>
+
+  <button mat-flat-button color="primary" matTooltip="create blog" (click)="openDialog()">Create</button>
+
   <a routerLink="contact"><button mat-flat-button color="primary" matTooltip="contact">Contact</button></a>
+
   <a routerLink="about"><button mat-flat-button color="primary" matTooltip="about">About</button></a>
 </mat-toolbar>
 

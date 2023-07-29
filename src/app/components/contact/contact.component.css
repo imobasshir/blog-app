@@ -1,0 +1,10 @@
+img {
+    border-radius: 25% 10%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 100px;
+}

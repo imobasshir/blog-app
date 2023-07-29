@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Tile } from 'src/app/models/tile.model';
 import { BlogService } from 'src/app/services/blog.service';
 
@@ -12,6 +15,20 @@ export class BlogComponent implements OnInit {
     private blogSer: BlogService,
   ) { }
 
+  
+  displayedColumns: string[] = [
+    'title',
+    'topics',
+    'content',
+    'refrences',
+    'author',
+    'action'
+  ];
+
+  dataSource!: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   ngOnInit(): void {
     this.getAllBlogs();
   }
@@ -19,22 +36,22 @@ export class BlogComponent implements OnInit {
   getAllBlogs() {
     this.blogSer.getAllBlogs().subscribe({
       next: (res) => {
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
         console.log(res);
       },
       error: (err) => console.log(err),
     })
   }
 
-  tiles: Tile[] = [
-    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
-    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
-    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
-    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
-  ];
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
 
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
   
 }

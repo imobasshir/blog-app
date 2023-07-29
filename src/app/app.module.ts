@@ -14,13 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
-import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogCreateDialogComponent } from './components/blog-create-dialog/blog-create-dialog.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -30,7 +33,6 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     BlogComponent,
     ContactComponent,
-    CreateBlogComponent,
     BlogCreateDialogComponent,
   ],
   imports: [
@@ -48,7 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatSelectModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { DialogRef } from '@angular/cdk/dialog';
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Injectable, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BlogService } from 'src/app/services/blog.service';
 
@@ -28,8 +28,6 @@ export class BlogCreateDialogComponent {
       title: '',
       topics: '',
       content: '',
-      image: '',
-      video: '',
       refrences: '',
       author: '',
       action: ''
@@ -59,13 +57,20 @@ export class BlogCreateDialogComponent {
     }
   }
 
+  title!: string;
+  topic!: string;
+  content!: string;
+
   getBlog(id: number) {
     this.blogService.getABlog(id).subscribe({
       next: (res) => {
         console.log(res);
+        this.title = res.title,
+          this.topic = res.topics,
+          this.content = res.content
       },
       error: (err) => console.log(err),
     });
   }
-  
+
 }
