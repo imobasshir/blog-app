@@ -16,7 +16,60 @@
   "profile": {
     "name": "typicode"
   },
-  "blog": {
-    
-  }
+  "blog": [
+    {
+      "title": "Angular Demo",
+      "topics": "Technology",
+      "content": "Angular usage is as follows",
+      "refrences": "",
+      "author": "MOBASSHIR IMAM",
+      "action": "",
+      "id": 1
+    },
+    {
+      "title": "XYZ",
+      "topics": "Politics",
+      "content": "fdasgga",
+      "refrences": "",
+      "author": "",
+      "action": "",
+      "id": 2
+    },
+    {
+      "title": "XYZ",
+      "topics": "",
+      "content": "",
+      "refrences": "",
+      "author": "",
+      "action": "",
+      "id": 3
+    },
+    {
+      "title": "drt",
+      "topics": "",
+      "content": "",
+      "refrences": "",
+      "author": "",
+      "action": "",
+      "id": 4
+    },
+    {
+      "title": "adsg",
+      "topics": "",
+      "content": "",
+      "refrences": "",
+      "author": "",
+      "action": "",
+      "id": 5
+    },
+    {
+      "title": "aaa",
+      "topics": "",
+      "content": "",
+      "refrences": "",
+      "author": "",
+      "action": "",
+      "id": 6
+    }
+  ]
 }
