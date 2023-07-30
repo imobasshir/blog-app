@@ -31,7 +31,7 @@
       "refrences": "angular.io",
       "author": "Mobasshir Imam",
       "action": "",
-      "id": 7
+      "id": 1
     },
     {
       "title": "JSON-SERVER",
@@ -40,7 +40,7 @@
       "refrences": "npmjs.com",
       "author": "Mobassshir Imam",
       "action": "",
-      "id": 8
+      "id": 2
     },
     {
       "title": "Content projection",
@@ -49,16 +49,16 @@
       "refrences": "angular.io",
       "author": "Mobasshir Imam",
       "action": "",
-      "id": 9
+      "id": 3
     },
     {
       "title": "Introduction to CSS layout",
       "topics": "Technology",
       "content": "CSS page layout techniques allow us to take elements contained in a web page and control where they're positioned relative to the following factors: their default position in normal layout flow, the other elements around them, their parent container, and the main viewport/window. The page layout techniques we'll be covering in more detail in this module are:\n\nNormal flow\nThe display property\nFlexbox\nGrid\nFloats\nPositioning\nTable layout\nMultiple-column layout\nEach technique has its uses, advantages, and disadvantages. No technique is designed to be used in isolation. By understanding what each layout method is designed for you'll be in a good position to understand which method is most appropriate for each task.",
       "refrences": "mdn docs",
-      "author": "Imam",
+      "author": "Ibbu",
       "action": "",
-      "id": 10
+      "id": 4
     }
   ]
 }

@@ -14,21 +14,10 @@ import { BlogCreateDialogComponent } from '../blog-create-dialog/blog-create-dia
   styleUrls: ['./blog.component.css']
 })
 @Injectable({ providedIn: 'root' })
-export class BlogComponent implements OnInit, OnChanges {
-  constructor(
-    private blogSer: BlogService,
-    private dialog: MatDialog,
-    private snackbar: SnackbarService,
-  ) { }
-
-  ngOnInit(): void {
-    this.getAllBlog();
-  }
-  ngOnChanges(): void {
-    this.getAllBlog();
-  }
+export class BlogComponent implements OnInit {
 
   displayedColumns: string[] = [
+    'id',
     'title',
     'topics',
     'content',
@@ -40,6 +29,16 @@ export class BlogComponent implements OnInit, OnChanges {
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(
+    private blogSer: BlogService,
+    private dialog: MatDialog,
+    private snackbar: SnackbarService,
+  ) { }
+
+  ngOnInit(): void {
+    this.getAllBlog();
+  }
 
   openSnackBar(message: string, action: string) {
     this.snackbar.openSnackBar(message, action);

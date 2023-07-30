@@ -1,7 +1,7 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BlogService } from 'src/app/services/blog.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 
@@ -11,6 +11,8 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
   styleUrls: ['./blog-create-dialog.component.css']
 })
 export class BlogCreateDialogComponent implements OnInit {
+
+  blogFormGroup: FormGroup;
   topics: string[] = [
     'Science',
     'Technology',
@@ -19,10 +21,9 @@ export class BlogCreateDialogComponent implements OnInit {
     'Geo Politics'
   ];
 
-  blogFormGroup: FormGroup;
-
   constructor(
     private formBuilder: FormBuilder,
+    private matDialogRef: MatDialogRef<BlogCreateDialogComponent>,
     private blogService: BlogService,
     private dialogRef: DialogRef<BlogCreateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -42,6 +43,10 @@ export class BlogCreateDialogComponent implements OnInit {
     this.blogFormGroup.patchValue(this.data);
   }
 
+  showSnackBar(message: string, action: string) {
+    this.snackBar.openSnackBar(message, action);
+  }
+
   id: any;
 
   onSubmit() {
@@ -49,8 +54,8 @@ export class BlogCreateDialogComponent implements OnInit {
       if (this.data) {
         this.blogService.updateBlog(this.blogFormGroup.value, this.data.id).subscribe({
           next: (res: any) => {
-            this.snackBar.openSnackBar('Blog updated!', 'Close');
-            this.dialogRef.close();
+            this.showSnackBar('Blog updated!', 'Close');
+            this.matDialogRef.close(true);
           },
           error: (err: any) => {
             console.log(err);
@@ -64,7 +69,7 @@ export class BlogCreateDialogComponent implements OnInit {
         this.blogService.createBlog(this.blogFormGroup.value).subscribe({
           next: (res: any) => {
             this.snackBar.openSnackBar('Blog created!', 'Close');
-            this.dialogRef.close();
+            this.matDialogRef.close(true);
             this.id = res.id;
           },
           error: (err: any) => {
