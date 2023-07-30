@@ -4,6 +4,7 @@
 
 table {
     width: 100%;
+    background-color: inherit !important;
 }
 
 .mat-mdc-form-field {

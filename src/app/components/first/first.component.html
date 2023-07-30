@@ -1,7 +1,29 @@
-<div class="mainctr">
-    <p>Selet the type of user</p>
+
+<div class="container mt-5">
+    <h1 class="display-1 mb-5">Select the type of user</h1>
+
+<div class=" row justify-content-center mx-auto gap-5">
+<div class="card col-6" style="width: 18rem;">
+    <div class="card-body mt-5">
+        <mat-icon class="material-symbols-outlined">
+            person
+          </mat-icon>
+          <h1 class="mb-5">User</h1>
+          <button mat-flat-button class="mb-2" color="primary" (click)="goToHome()">User login</button>
+        </div>
+    </div>
+    
+    <div class="card col-6" style="width: 18rem;">
+        <div class="card-body mt-5">
+            <mat-icon class="material-symbols-outlined">
+                admin_panel_settings
+            </mat-icon>
+          <h1 class="mb-5">Admin</h1>
+
+            <button mat-flat-button class="mb-2" color="primary" (click)="goToHomeAdmin()">Admin login</button>
+      
+    </div>
+  </div>
 </div>
-<div class="container1">
-    <button mat-flat-button color="primary" (click)="goToHome()">User</button>
-    <button mat-flat-button color="primary" (click)="goToHomeAdmin()">Admin</button>
+
 </div>

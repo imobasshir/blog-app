@@ -1,6 +1,8 @@
 <!-- TOOLBAR -->
 <mat-toolbar color="primary">
-  <a routerLink="first"><button mat-flat-button color="primary">Blog Website</button></a>
+  <a routerLink="first"><img width="30"
+      src="https://raw.githubusercontent.com/imobasshir/imobasshir/46c99e0be8c45a7fefa2312efe55191b0092d532/assets/images/logo.svg"
+      alt="" /><button mat-flat-button color="primary">BlogSpher</button></a>
   <!-- <span>Blog App</span> -->
   <span class="example-spacer"></span>
 
@@ -8,14 +10,36 @@
 
   <a routerLink="blog"><button mat-flat-button color="primary" matTooltip="blog">Blog</button></a>
 
-  <a routerLink="admin-blog"><button mat-flat-button color="primary" matTooltip="admin blog">Admin Blog</button></a>
+  <a routerLink="admin-blog"><button mat-flat-button color="primary" matTooltip="admin blog">
+      Admin Blog
+    </button></a>
 
-  <button mat-flat-button color="primary" matTooltip="create blog" (click)="openDialog()">Create</button>
+  <button mat-flat-button color="primary" matTooltip="create blog" (click)="openDialog()">
+    Create
+  </button>
 
-  <a routerLink="contact"><button mat-flat-button color="primary" matTooltip="contact">Contact</button></a>
+  <a routerLink="contact"><button mat-flat-button color="primary" matTooltip="contact">
+      Contact
+    </button></a>
 
-  <a routerLink="about"><button mat-flat-button color="primary" matTooltip="about">About</button></a>
+  <a routerLink="about"><button mat-flat-button color="primary" matTooltip="about">
+      About
+    </button></a>
 </mat-toolbar>
 
-
 <router-outlet></router-outlet>
+
+<footer>
+  <div class="social-media-icon">
+    <i class="fa fa-facebook-square"></i>
+    <i class="fa fa-instagram"></i>
+    <i class="fa fa-linkedin-square"></i>
+    <i class="fa fa-snapchat"></i>
+  </div>
+  <p class="copyright">Copyright &copy;2023 BlogSpher, Inc</p>
+  <p>
+    <a href="" class="company-detail">Legal Stuff</a> |
+    <a href="" class="company-detail">Privacy Policy</a> |
+    <a href="" class="company-detail">Security</a>
+  </p>
+</footer>

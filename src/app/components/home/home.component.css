@@ -1,0 +1,29 @@
+/* html {
+    
+} */
+
+.row {
+  background-color: #e9f1fa;
+}
+.card {
+  width: 50rem;
+  margin: 0 auto;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.card-body {
+  background-color: #e9f1fa;
+}
+
+.card-title {
+  font-size: 40px;
+  font-weight: bold;
+}
+.btn {
+  background-color: #673ab7;
+}
+
+.card-link {
+  display: inline;
+}
