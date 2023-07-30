@@ -27,6 +27,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { FirstComponent } from './components/first/first.component';
 import { UserBlogComponent } from './components/user-blog/user-blog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OpenBlogComponent } from './components/open-blog/open-blog.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     BlogCreateDialogComponent,
     FirstComponent,
     UserBlogComponent,
+    OpenBlogComponent,
   ],
   imports: [
     BrowserModule,

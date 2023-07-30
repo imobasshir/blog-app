@@ -18,7 +18,7 @@ export class BlogService {
 
   // get all blogs
   getAllBlogs(): Observable<any> {
-    return this.http.get<any>(this.baseUrl);
+    return this.http.get(this.baseUrl);
   }
 
   getLastBlogs(): Observable<any> {

@@ -1,49 +1,73 @@
 <div mat-dialog-title>
-    <h2>Create a Blog</h2>
+  <h2>Create a Blog</h2>
 </div>
 <form [formGroup]="blogFormGroup" (ngSubmit)="onSubmit()">
-    <div mat-dialog-content class="content">
-        <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>Blog Title</mat-label>
-                <input matInput type="text" name="title" formControlName="title" placeholder="Ex. Some blog title">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Blog Topics</mat-label>
-                <mat-select name="topics" formControlName="topics">
-                    <mat-option *ngFor="let topic of topics" [value]="topic">
-                        {{topic}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <div class="row-full">
-            <mat-form-field class="row-full" appearance="outline">
-                <mat-label>Content</mat-label>
-                <textarea matInput
-                    placeholder="Ex. Angular is a commonly used framework used to make a single page application."
-                    name="content" formControlName="content"></textarea>
-            </mat-form-field>
-        </div>
-
-        <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>Refrences</mat-label>
-                <input matInput type="text" name="refrences" formControlName="refrences" placeholder="Ex. science.com">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Author Name</mat-label>
-                <input matInput type="text" name="author" formControlName="author" placeholder="Ex. Mobasshir">
-            </mat-form-field>
-        </div>
-
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Blog Title</mat-label>
+        <input
+          matInput
+          type="text"
+          name="title"
+          formControlName="title"
+          placeholder="Ex. Some blog title"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Blog Topics</mat-label>
+        <mat-select name="topics" formControlName="topics">
+          <mat-option *ngFor="let topic of topics" [value]="topic">
+            {{ topic }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
-    <div class="action" mat-dialog-actions>
-        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+    <div class="row-full">
+      <mat-form-field class="row-full" appearance="outline">
+        <mat-label>Content</mat-label>
+        <textarea
+          matInput
+          placeholder="Ex. Angular is a commonly used framework used to make a single page application."
+          name="content"
+          formControlName="content"
+        ></textarea>
+      </mat-form-field>
     </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Refrences</mat-label>
+        <input
+          matInput
+          type="text"
+          name="refrences"
+          formControlName="refrences"
+          placeholder="Ex. wikipedia.com"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Author Name</mat-label>
+        <input
+          matInput
+          type="text"
+          name="author"
+          formControlName="author"
+          placeholder="Ex. Mobasshir"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="action" mat-dialog-actions>
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Update" : "Create" }}
+    </button>
+  </div>
 </form>
 
 <p></p>
