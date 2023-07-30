@@ -26,3 +26,7 @@ th {
 .main-body mat-form-field {
     width: 100%;
 }
+
+mat-paginator {
+    background-color: inherit !important;
+}

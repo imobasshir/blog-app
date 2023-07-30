@@ -10,9 +10,10 @@ import { BlogComponent } from '../blog/blog.component';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private blogDetail: BlogService
+    private blogDetail: BlogService,
+    private blog: BlogComponent
   ) { }
-  
+
   blogDt: any
   ngOnInit(): void {
     this.blogDetail.getAllBlogs().subscribe(
@@ -20,6 +21,10 @@ export class HomeComponent implements OnInit {
     )
   }
   getBlogDetails() {
+  }
+
+  openBlog(id: any) {
+    this.blog.openBlog(id);
   }
 
   //  title !: string 
