@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
+import { BlogComponent } from '../blog/blog.component';
 
 @Component({
   selector: 'app-home',
@@ -8,25 +9,25 @@ import { BlogService } from 'src/app/services/blog.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private blogSer: BlogService) { }
-
+  constructor(
+    private blogDetail: BlogService
+  ) { }
+  
+  blogDt: any
   ngOnInit(): void {
-    this.getBlogs();
+    this.blogDetail.getAllBlogs().subscribe(
+      res => { this.blogDt = res }
+    )
+  }
+  getBlogDetails() {
   }
 
-  data!: Array<any>;
+  //  title !: string 
+  //   topics !:string
+  //   content !:string
+  //   refrences !: string
+  //   author !: string
+  //   action !: string
+  //   id!:number 
 
-  getBlogs(): any {
-
-    this.blogSer.getAllBlogs().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.data = res;
-        
-        // console.log(this.data[0]);
-
-      },
-      error: (err) => console.log(err),
-    });
-  }
 }
