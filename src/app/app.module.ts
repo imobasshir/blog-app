@@ -24,6 +24,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { FirstComponent } from './components/first/first.component';
+import { UserBlogComponent } from './components/user-blog/user-blog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -34,6 +37,8 @@ import { MatSortModule } from '@angular/material/sort';
     BlogComponent,
     ContactComponent,
     BlogCreateDialogComponent,
+    FirstComponent,
+    UserBlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

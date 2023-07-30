@@ -1,0 +1,17 @@
+p {
+    font-weight: 500;
+    font-size: larger;
+}
+
+.mainctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px 20px;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-evenly;
+}

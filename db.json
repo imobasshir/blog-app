@@ -16,6 +16,13 @@
   "profile": {
     "name": "typicode"
   },
+  "signup": [
+    {
+      "email": "mobasshirimam@gmail.com",
+      "password": "test123",
+      "id": 1
+    }
+  ],
   "blog": [
     {
       "title": "Angular Demo",

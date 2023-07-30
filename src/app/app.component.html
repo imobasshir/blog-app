@@ -1,11 +1,14 @@
 <!-- TOOLBAR -->
 <mat-toolbar color="primary">
-  <span>Blog App</span>
+  <a routerLink="first"><button mat-flat-button color="primary">Blog Website</button></a>
+  <!-- <span>Blog App</span> -->
   <span class="example-spacer"></span>
 
   <a routerLink="home"><button mat-flat-button color="primary" matTooltip="home">Home</button></a>
 
   <a routerLink="blog"><button mat-flat-button color="primary" matTooltip="blog">Blog</button></a>
+
+  <a routerLink="admin-blog"><button mat-flat-button color="primary" matTooltip="admin blog">Admin Blog</button></a>
 
   <button mat-flat-button color="primary" matTooltip="create blog" (click)="openDialog()">Create</button>
 
